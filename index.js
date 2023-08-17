@@ -4,8 +4,10 @@ const {connection}=require("./config/db");
 const dotenv=require("dotenv");
 dotenv.config();
 const {postRouter}=require("./routes/post.routes");
+const cors=require("cors");
 
 app.use(express.json());
+app.use(cors())
 app.use("/post",postRouter);
 
 
